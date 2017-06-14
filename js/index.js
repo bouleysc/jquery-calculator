@@ -3,13 +3,10 @@ $(document).ready(function(){
   var $operators = $('span.operator');
   var $clear = $('span#clear');
   var $equals = $('span#equals');
-
-
   $numbers.click(appendNumber);
   $operators.click(appendOperator);
   $clear.click(clearScreen);
   $equals.click(evaluateEquation);
-
 });
 
 var $screen = $('div#screen');
@@ -23,15 +20,17 @@ function appendNumber() {
   $screen.text($screenText + $currentNumber)
   }
 }
+
 function appendOperator() {
   var $screenText = $screen.text();
   var $currentOperator = $(this).text();
-if($screenText === 'Error') {
+  if($screenText === 'Error') {
 
-} else {
+  } else {
   $screen.text($screenText + $currentOperator)
   }
 }
+
 function clearScreen() {
   $screen.text('');
   // or $screen.empty();
@@ -39,7 +38,6 @@ function clearScreen() {
 
 function evaluateEquation(){
   var $screenText = $screen.text();
-
   if($screenText === 'Error') {
 
   } else {
