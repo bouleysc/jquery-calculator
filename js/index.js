@@ -57,7 +57,9 @@ function evaluateEquation(){
     if(counter > 1) {
       $screen.text('Error');
     } else if (lastChar === '+' || lastChar === '-' || lastChar === '*' || lastChar === '/'){
-      $screen.text('Error')
+      $screen.text('Error');
+    }else if($screenText.includes('/') && lastChar === '0'){
+      $screen.text('Error');
     }else {
       var result = eval($screenText);
       $screen.text(result);
